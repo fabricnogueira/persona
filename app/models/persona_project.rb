@@ -1,0 +1,2 @@
+class PersonaProject < ApplicationRecord
+end
