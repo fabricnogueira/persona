@@ -8,5 +8,8 @@ class AuthsTest < ApplicationSystemTestCase
     assert_selector "h1", text: "Minha Página Inicial"
     click_on "Crie sua conta"
     fill_in "Qual o seu email?", with: "basico179@hotmail.com"
+
+    assert_selector "p", text: "Confira seu email e clique no link para ativar sua conta."
+
   end
 end  
