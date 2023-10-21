@@ -19,6 +19,10 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.7'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
+# Encrypt data (email) with attr_keyring
+gem 'attr_keyring'
+# Column level encryption
+gem 'pgcrypto'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
@@ -45,6 +49,10 @@ group :development do
   gem 'rubocop-rails'
   # Create routes
   gem 'human_routes'
+  # Run 'guard' to automatically run tests and other tasks when files change. (bundle exec guard)
+  gem 'guard'
+  # Override UUID columns to use the native UUID type in PostgreSQL
+  gem 'ar-uuid'
 end
 
 group :test do
@@ -53,5 +61,10 @@ group :test do
   gem 'selenium-webdriver', '>= 4.0.0.rc1'
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
+  # Add 'guard-livereload' to your Guardfile, like this:
+  gem 'guard-livereload'
+  # rspec for testing
+  gem 'guard-rspec'
+
 end
 
