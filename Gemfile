@@ -19,10 +19,10 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.7'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-# Encrypt data (email) with attr_keyring
-gem 'attr_keyring'
 # Column level encryption
 gem 'pgcrypto'
+gem 'devise'
+
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
@@ -53,6 +53,7 @@ group :development do
   gem 'guard'
   # Override UUID columns to use the native UUID type in PostgreSQL
   gem 'ar-uuid'
+
 end
 
 group :test do
@@ -68,3 +69,6 @@ group :test do
 
 end
 
+gem 'omniauth'
+gem 'omniauth-google-oauth2'
+gem 'omniauth-rails_csrf_protection', '~> 1.0'
