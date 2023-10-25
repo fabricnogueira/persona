@@ -10,13 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_10_21_112352) do
+ActiveRecord::Schema.define(version: 2023_10_23_145125) do
 
   # These are extensions that must be enabled in order to support this database
-  enable_extension "pgcrypto"
   enable_extension "plpgsql"
 
-  create_table "persona_projects", force: :cascade do |t|
+  create_table "persona_projects", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.string "nome"
     t.text "descricao"
     t.datetime "created_at", precision: 6, null: false
@@ -24,12 +23,15 @@ ActiveRecord::Schema.define(version: 2023_10_21_112352) do
   end
 
   create_table "users", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
-    t.binary "encrypted_email", null: false
-    t.text "email_digest", null: false
-    t.bigint "keyring_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["email_digest"], name: "index_users_on_email_digest", unique: true
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
 end
