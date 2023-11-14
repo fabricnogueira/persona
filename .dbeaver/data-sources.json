@@ -1,0 +1,35 @@
+{
+	"folders": {},
+	"connections": {
+		"postgresql_generic-18bce205813-7c94fd3a67cd2a06": {
+			"provider": "generic",
+			"driver": "postgresql_generic",
+			"name": "localhost",
+			"save-password": true,
+			"configuration": {
+				"host": "localhost",
+				"port": "5432",
+				"database": "persona_dev",
+				"url": "jdbc:postgresql://localhost:5432/persona_dev",
+				"configurationType": "MANUAL",
+				"type": "dev",
+				"auth-model": "native",
+				"handlers": {}
+			}
+		}
+	},
+	"connection-types": {
+		"dev": {
+			"name": "Desenvolvimento",
+			"color": "255,255,255",
+			"description": "Banco de dados de desenvolvimento",
+			"auto-commit": true,
+			"confirm-execute": false,
+			"confirm-data-change": false,
+			"smart-commit": false,
+			"smart-commit-recover": false,
+			"auto-close-transactions": true,
+			"close-transactions-period": 1800
+		}
+	}
+}
