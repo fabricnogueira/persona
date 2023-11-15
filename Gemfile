@@ -69,6 +69,11 @@ group :test do
 
 end
 
+# Authentication services
 gem 'omniauth'
 gem 'omniauth-google-oauth2'
 gem 'omniauth-rails_csrf_protection', '~> 1.0'
+
+# Warnings suppression
+gem 'did_you_mean'
+
