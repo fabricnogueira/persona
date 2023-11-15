@@ -1,3 +1,6 @@
-<h1><%= @article.title %></h1>
+<h1><%= @post.content %></h1>
 
-<p><%= @article.body %></p>
+<p><strong>Attachment:</strong> <%= @post.attachment %></p>
+<p><strong>Autor:</strong> <%= @post.user.email %></p>
+
+<%= link_to 'Voltar para a lista de posts', posts_path %>
