@@ -1,12 +1,9 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  resources :posts, only: [:index, :create]
-  # root 'pages#home'
-  root 'posts#index'
-
-  get "/posts", to: "posts#index"
-  get "/posts/:id", to: "posts#show"
+  resources :posts
+  root 'pages#home'
+  # root 'posts#index'
 
   devise_for :users, controllers: {
     registrations_controller: 'users/registrations',
