@@ -1,0 +1,8 @@
+<!-- app/views/posts/_index.html.erb -->
+
+<% posts.each do |post| %>
+  <div class="post">
+    <p><strong><%= post.user.email %>:</strong> <%= post.content %></p>
+    <%= image_tag post.attachment if post.attachment.attached? %>
+  </div>
+<% end %>
