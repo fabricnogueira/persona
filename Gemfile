@@ -20,8 +20,12 @@ gem 'jbuilder', '~> 2.7'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 # Column level encryption
+# Essential gems:
 gem 'pgcrypto'
 gem 'devise'
+gem 'bootstrap'
+gem 'font-awesome-rails'
+
 
 
 # Use Active Storage variant
