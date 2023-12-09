@@ -1,5 +1,7 @@
-<h1>Criar Novo Post</h1>
 
-<%= render 'form' %>
+<div class="row"><%= render 'form', post: @post %>
+
+</div>
+
 
 <%= link_to 'Voltar para a lista de posts', posts_path %>
