@@ -1,38 +1,31 @@
-<div class="col-x1-4 col-md-6 col-sm-8 col-10" 
-style="margin: auto; background-color: #f8f8f8; border-radius: 6px; padding: 15px "> 
+<div class="col-x1-4 col-md-6 col-sm-8 col-10" style="margin: auto; background-color: #f8f8f8; border-radius: 6px; padding: 15px">
 
-<%= form_with(model: @post, local: true) do |form| %>
-<h1>Criar Novo Post</h1>
+  <%= form_with(model: @post, local: true) do |form| %>
+    <h1>Criar Novo Post</h1>
 
-  <% if @post.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@post.errors.count, "erro") %> impediram que este post fosse salvo:</h2>
+    <div>
+      <% invalid_content = @post.errors.include?(:content) %>
+      <%= form.label :registro, style: "display: block" %>
+      <%= form.text_field :content, class: "form-control" %>
+      <% if invalid_content %>
+        <p style="color: red">
+        <%= @post.errors.full_messages_for(:content).join(", ") %>
+        </p>
+      <% end %>
+    </div>
 
-      <ul>
-        <% @post.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
+    <div class="field">
+      <%= form.label :attachment %>
+      <%= form.text_field :attachment, class: "form-control" %>
+    </div>
+
+    <div class="field">
+      <%= form.label :user_id %>
+      <%= form.collection_select :user_id, User.all, :id, :email, class: "form-control" %>
+    </div>
+
+    <div class="actions">
+      <%= form.submit class: "btn btn-primary col-12" %>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= form.label :Registro %>
-    <%= form.text_area :content, class: "form-control" %>
-  </div>
-
-  <div class="field">
-    <%= form.label :attachment %>
-    <%= form.text_field :attachment, class: "form-control" %>
-  </div>
-
-  <div class="field">
-    <%= form.label :user_id %>
-    <%= form.collection_select :user_id, User.all, :id, :email %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit class: "btn btn-primary col-12" %>
-  </div>
-<% end %>
 </div>
