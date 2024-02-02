@@ -21,6 +21,7 @@ gem 'jbuilder', '~> 2.7'
 # gem 'bcrypt', '~> 3.1.7'
 # Column level encryption
 # Essential gems:
+gem 'simple_form'
 gem 'pgcrypto'
 gem 'devise'
 gem 'bootstrap'
