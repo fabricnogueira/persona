@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   before_action :set_post, only: [:show]
 
   def index
-    @posts = Post.all
+    @posts = Post.order(created_at: :desc) # Isso ordena os posts pela data de criação em ordem decrescente
   end
 
   def show
@@ -30,6 +30,6 @@ class PostsController < ApplicationController
   end
 
   def post_params
-    params.require(:post).permit(:attachment, :content, :user_id)
+    params.require(:post).permit(:attachment, :content, :user_id, images:[])
   end
 end
