@@ -1,6 +1,5 @@
 <div class="col-x1-4 col-md-6 col-sm-8 col-10" style="margin: auto; background-color: #f8f8f8; border-radius: 6px; padding: 15px">
-
-  <%= form_with(model: @post, local: true) do |form| %>
+  <%= simple_form_for @post, html: { multipart: true } do |form| %>
     <h1>Criar Novo Post</h1>
 
     <div>
@@ -22,6 +21,11 @@
     <div class="field">
       <%= form.label :user_id %>
       <%= form.collection_select :user_id, User.all, :id, :email, class: "form-control" %>
+    </div>
+
+    <div class="field">
+      <%= form.label :images %>
+      <%= form.file_field :images, multiple: true, class: "form-control" %>
     </div>
 
     <div class="actions">
