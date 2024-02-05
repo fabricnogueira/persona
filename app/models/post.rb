@@ -3,5 +3,5 @@ class Post < ApplicationRecord
   # validates :title, presence: true
   validates :content, presence: true, length: { maximum: 500 }
 
-  has_many_attached :images
+  has_one_attached :image
 end

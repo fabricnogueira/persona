@@ -28,8 +28,9 @@ class PostsController < ApplicationController
   def set_post
     @post = Post.find(params[:id])
   end
-
+  
   def post_params
-    params.require(:post).permit(:attachment, :content, :user_id, images:[])
+    params.require(:post).permit(:content, :user_id, :image)
   end
+  
 end
