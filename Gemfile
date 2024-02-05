@@ -26,6 +26,7 @@ gem 'pgcrypto'
 gem 'devise'
 gem 'bootstrap'
 gem 'font-awesome-rails'
+gem 'mini_magick'
 
 
 
