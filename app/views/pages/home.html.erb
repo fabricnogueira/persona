@@ -1,15 +1,9 @@
 <h1>Minha Página Inicial</h1>
 
-<% if current_user %>
-  <h2><%= current_user.email %></h2>
-  <%= link_to "Editar conta", edit_user_registration_path %>
-  <%= button_to "Sair", destroy_user_session_path, data: { turbo: "false" }, method: :delete %>
-  <%= link_to "Criar Post", new_post_path %> <!-- Adicionando o link para criar um novo post -->
-
-
-<% else %>
+<div style="position: absolute; top: 50%; left: 20%;">
   <%= link_to "Entrar", new_user_session_path %>
   <%= link_to "Registrar", new_user_registration_path %>
+</div>
+
   <!--<%= button_to "Sair", destroy_user_session_path, data: { turbo: "false" }, method: :delete %>-->
 
-<% end %>
