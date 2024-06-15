@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   resources :posts
   get 'home/about'
   root 'pages#home'
+  get 'principal', to: 'home#principal', as: :principal
+
   # root 'posts#index'
 
   devise_for :users, controllers: {
