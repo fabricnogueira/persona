@@ -24,3 +24,11 @@
 <% end %>
 
 <%= render "devise/shared/links" %>
+
+<%- if devise_mapping.omniauthable? %>
+  <%- resource_class.omniauth_providers.each do |provider| %>
+    <%= link_to omniauth_authorize_path(resource_name, provider), data: {turbo: "false"} do %>
+      <%= image_tag "/assets/web_neutral_rd_SU@1x.png", alt: "Sign in with #{provider.to_s.titleize}" %>
+    <% end %>
+  <% end %>
+<% end %>
